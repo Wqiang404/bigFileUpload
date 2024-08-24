@@ -6,7 +6,7 @@ import { Provider } from "react-redux";//负责把属性中的store传递给子�
 import { ConfigProvider } from "antd";//配置
 import zh_CN from "antd/locale/zh_CN";//国际化中文
 import App from "./App.tsx";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 // import 'antd/dist/antd.css';
 // import "./assets/css/common.less";//通用的样式
 // import Tabs from "./components/Tabs";//引入底部的页签导航

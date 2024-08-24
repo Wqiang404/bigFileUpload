@@ -1,14 +1,47 @@
-import React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
 import { Menu } from 'antd'; 
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import type { MenuProps, MenuTheme } from 'antd';
 import '../static/css/index.css'
 
+type MenuItem = Required<MenuProps>['items'][number];
+
+const items: MenuItem[] = [
+  {
+    key: 'home',
+    label: 'home',
+    icon: <MailOutlined />,
+    // children: []
+  },
+  {
+    key: 'dashboard',
+    label: 'dashboard',
+    icon: <MailOutlined />,
+    // children: []
+  },
+  {
+    key: 'about',
+    label: 'about',
+    icon: <MailOutlined />,
+    // children: []
+  },
+  {
+    key: 'NoMatch',
+    label: 'NoMatch',
+    icon: <MailOutlined />,
+    // children: []
+  }
+]
+
 function Layout() {
-    const menuItems = [  
-      { key: 'home', title: 'Home', path: '/' },  
-      { key: 'about', title: 'About', path: '/about' },  
-      { key: 'dashboard', title: 'Dashboard', path: '/dashboard' },  
-    ];
+  const [current, setCurrent] = useState(window.location.pathname.slice(1));
+  const navigate = useNavigate();
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    setCurrent(e.key);
+    navigate(e.key);
+  };
     return (
       <div className="layout">
         {/* <nav>
@@ -28,13 +61,16 @@ function Layout() {
           </ul>
         </nav> */}
         <div className='menu'>
-          <Menu mode="vertical" style={{ lineHeight: '64px', height: '100%' }}>  
-            {menuItems.map(item => (  
-              <Menu.Item key={item.key}>  
-                <Link to={item.path}>{item.title}</Link>  
-              </Menu.Item>  
-            ))}  
-          </Menu>
+          <Menu
+            theme={'dark'}
+            onClick={onClick}
+            style={{ width: 256, height: '100vh' }}
+
+            defaultOpenKeys={['home']}
+            selectedKeys={[current]}
+            mode="inline"
+            items={items}
+          />
         </div>
   
         <div className="container">
@@ -46,5 +82,5 @@ function Layout() {
     );
   }
 
-  export default Layout;
+export default Layout; 
   

@@ -17,9 +17,10 @@ module.exports = {
             directory: path.join(__dirname, 'dist'), // 静态文件根目录
             publicPath: '/', // 静态文件访问的公共路径  
         },
-        historyApiFallback: { //browserHistory的时候，刷新会报404. 自动重定向到index.html
-            index: './src/index.html'
-        }
+        historyApiFallback: true,//当浏览器访问的路径不存在的时候，自动跳转到index.html
+        // historyApiFallback: { //browserHistory的时候，刷新会报404. 自动重定向到index.html
+        //     index: './public/index.html'
+        // }
     },
     resolve: {//配置如何解析
         alias: {//别名
@@ -108,7 +109,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html'//以此文件作为模板拼入打包后的文件并输出到目标目录中
+            template: './public/index.html'//以此文件作为模板拼入打包后的文件并输出到目标目录中
         }),
         //热更新插件
         new webpack.HotModuleReplacementPlugin()
