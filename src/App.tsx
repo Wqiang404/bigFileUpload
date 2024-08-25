@@ -1,4 +1,4 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 import React from "react";
 import Layout from "./page/Layout";
 import Home from "./page/Home";
@@ -16,6 +16,7 @@ export default function App() {
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<NoMatch />} />
+          {/* <Route path="*" element={<Navigate to="/home" />} /> */}
         </Route>
       </Routes>
     </div>
