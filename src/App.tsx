@@ -5,6 +5,7 @@ import Home from "./page/Home";
 import About from "./page/About";
 import Dashboard from "./page/Dashboard";
 import NoMatch from "./page/NoMatch";
+import Counter from './page/counter/Counter'
 
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index path="home" element={<Home />} />
+          <Route index path="counter" element={<Counter />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<NoMatch />} />

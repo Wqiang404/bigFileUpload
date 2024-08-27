@@ -7,32 +7,16 @@ import { ConfigProvider } from "antd";//配置
 import zh_CN from "antd/locale/zh_CN";//国际化中文
 import App from "./App.tsx";
 import { BrowserRouter, HashRouter } from "react-router-dom";
-// import 'antd/dist/antd.css';
-// import "./assets/css/common.less";//通用的样式
-// import Tabs from "./components/Tabs";//引入底部的页签导航
-// import Home from "./routes/Home";//首页
-// import Mine from "./routes/Mine";//我的课程
-// import Profile from "./routes/Profile";//个人中心
-// import { ConnectedRouter } from 'connected-react-router';//redux绑定路由
-// import history from './store/history';
+import "./static/css/index.css";//通用的样式
+import store from "./store/index.ts";
+
 const root = createRoot(document.getElementById('root') as Element);
 root.render(
-    // <Provider store={store}>
-    //     <ConfigProvider locale={zh_CN}>
-    //         <main className="main-container">
-    //             <Routes>
-    //                 <Route path="/" element={<Home />} />
-    //                 <Route path="/mine" element={<Mine />} />
-    //                 <Route path="/profile" element={<Profile />} />
-    //                 <Navigate  to="/" />
-    //             </Routes>
-    //         </main>
-    //         <Tabs />
-    //     </ConfigProvider>
-    // </Provider>,
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     </React.StrictMode>
 );

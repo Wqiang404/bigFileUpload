@@ -3,7 +3,7 @@ import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
 import { Menu } from 'antd'; 
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps, MenuTheme } from 'antd';
-import '../static/css/index.css'
+// import '../static/css/index.css'
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -11,6 +11,12 @@ const items: MenuItem[] = [
   {
     key: 'home',
     label: 'home',
+    icon: <MailOutlined />,
+    // children: []
+  },
+  {
+    key: 'counter',
+    label: 'counter',
     icon: <MailOutlined />,
     // children: []
   },
@@ -44,22 +50,6 @@ function Layout() {
   };
     return (
       <div className="layout">
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/nothing-here">Nothing Here</Link>
-            </li>
-          </ul>
-        </nav> */}
         <div className='menu'>
           <Menu
             theme={'dark'}
