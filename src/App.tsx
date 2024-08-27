@@ -14,7 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index path="home" element={<Home />} />
-          <Route index path="counter" element={<Counter />} />
+          <Route path="counter" element={<Counter />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="*" element={<NoMatch />} />

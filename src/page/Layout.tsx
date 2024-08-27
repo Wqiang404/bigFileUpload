@@ -3,9 +3,22 @@ import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
 import { Menu } from 'antd'; 
 import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
 import type { MenuProps, MenuTheme } from 'antd';
+import { rootRouter } from '../routes/index.tsx'; 
 // import '../static/css/index.css'
 
 type MenuItem = Required<MenuProps>['items'][number];
+
+// const items: MenuItem[] = rootRouter.map(item => ({
+//   key: item.path!.slice(1),
+//   label: item.path!.slice(1),
+//   icon: <MailOutlined />,
+//   // children: item.children.map(item => ({
+//   //   key: item.path,
+//   //   label: item.path,
+//   //   icon: <MailOutlined />,
+//   //   // children: []
+//   // })),
+// }))
 
 const items: MenuItem[] = [
   {
@@ -55,7 +68,6 @@ function Layout() {
             theme={'dark'}
             onClick={onClick}
             style={{ width: 256, height: '100vh' }}
-
             defaultOpenKeys={['home']}
             selectedKeys={[current]}
             mode="inline"

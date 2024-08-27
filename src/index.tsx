@@ -9,13 +9,15 @@ import App from "./App.tsx";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import "./static/css/index.css";//通用的样式
 import store from "./store/index.ts";
+import Router from './routes/index.tsx'
 
 const root = createRoot(document.getElementById('root') as Element);
 root.render(
     <React.StrictMode>
         <Provider store={store}>
             <BrowserRouter>
-                <App />
+                <Router />
+                {/* <App /> */}
             </BrowserRouter>
         </Provider>
     </React.StrictMode>
