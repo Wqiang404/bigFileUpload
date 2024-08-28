@@ -25,7 +25,20 @@ const items: MenuItem[] = [
     key: 'home',
     label: 'home',
     icon: <MailOutlined />,
-    // children: []
+    children: [
+      {
+        key: 'home',
+        label: 'home',
+        icon: <MailOutlined />,
+        // children: []
+      },
+      {
+        key: 'home/about',
+        label: 'about',
+        icon: <MailOutlined />,
+        // children: []
+      }
+    ]
   },
   {
     key: 'counter',

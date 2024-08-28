@@ -20,6 +20,10 @@ export const rootRouter: RouteObject[] = [
         path: "home",
         element: <Home />,
       },
+      {
+        path: "home/about",
+        element: <About />,
+      },
     ],
   },
   {
