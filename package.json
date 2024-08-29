@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack",
+    "format": "prettier --write \"src/**/*.+(js|ts|jsx|tsx)\"",
     "lint": "eslint",
     "lint:fix": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\""
   },
@@ -46,6 +47,7 @@
     "less-loader": "^12.2.0",
     "lib-flexible": "^0.3.2",
     "postcss-loader": "^8.1.1",
+    "prettier": "^3.3.3",
     "px2rem-loader": "^0.1.9",
     "source-map-loader": "^5.0.0",
     "style-loader": "^4.0.0",
