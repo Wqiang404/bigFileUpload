@@ -22,12 +22,12 @@ type MenuItem = Required<MenuProps>['items'][number]
 
 const items: MenuItem[] = [
   {
-    key: 'home',
+    key: 'index',
     label: 'home',
     icon: <MailOutlined />,
     children: [
       {
-        key: 'home/home',
+        key: 'home',
         label: 'home',
         icon: <MailOutlined />
         // children: []
@@ -81,7 +81,7 @@ function Layout() {
           theme={'dark'}
           onClick={onClick}
           style={{ width: 256, height: '100vh' }}
-          defaultOpenKeys={['home']}
+          defaultOpenKeys={['index']}
           selectedKeys={[current]}
           mode="inline"
           items={items}
