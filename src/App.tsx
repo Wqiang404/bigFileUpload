@@ -5,8 +5,7 @@ import Home from "./page/Home";
 import About from "./page/About";
 import Dashboard from "./page/Dashboard";
 import NoMatch from "./page/NoMatch";
-import Counter from './page/counter/Counter'
-
+import Counter from "./page/counter/Counter";
 
 export default function App() {
   return (
@@ -24,4 +23,3 @@ export default function App() {
     </div>
   );
 }
-
