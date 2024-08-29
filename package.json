@@ -3,7 +3,7 @@
     "dev": "webpack serve",
     "build": "webpack",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@ant-design/icons": "^5.4.0",

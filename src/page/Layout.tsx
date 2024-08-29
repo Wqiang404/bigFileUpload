@@ -1,16 +1,12 @@
-import React, { useState } from "react";
-import { Routes, Route, Outlet, Link, useNavigate } from "react-router-dom";
-import { Menu } from "antd";
-import {
-  AppstoreOutlined,
-  MailOutlined,
-  SettingOutlined,
-} from "@ant-design/icons";
-import type { MenuProps, MenuTheme } from "antd";
-import { rootRouter } from "../routes/index.tsx";
+import React, { useState } from 'react'
+import { Routes, Route, Outlet, Link, useNavigate } from 'react-router-dom'
+import { Menu } from 'antd'
+import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons'
+import type { MenuProps, MenuTheme } from 'antd'
+import { rootRouter } from '../routes/index.tsx'
 // import '../static/css/index.css'
 
-type MenuItem = Required<MenuProps>["items"][number];
+type MenuItem = Required<MenuProps>['items'][number]
 
 // const items: MenuItem[] = rootRouter.map(item => ({
 //   key: item.path!.slice(1),
@@ -26,66 +22,66 @@ type MenuItem = Required<MenuProps>["items"][number];
 
 const items: MenuItem[] = [
   {
-    key: "home",
-    label: "home",
+    key: 'home',
+    label: 'home',
     icon: <MailOutlined />,
     children: [
       {
-        key: "home",
-        label: "home",
-        icon: <MailOutlined />,
+        key: 'home',
+        label: 'home',
+        icon: <MailOutlined />
         // children: []
       },
       {
-        key: "home/about",
-        label: "about",
-        icon: <MailOutlined />,
+        key: 'home/about',
+        label: 'about',
+        icon: <MailOutlined />
         // children: []
-      },
-    ],
+      }
+    ]
   },
   {
-    key: "counter",
-    label: "counter",
-    icon: <MailOutlined />,
+    key: 'counter',
+    label: 'counter',
+    icon: <MailOutlined />
     // children: []
   },
   {
-    key: "dashboard",
-    label: "dashboard",
-    icon: <MailOutlined />,
+    key: 'dashboard',
+    label: 'dashboard',
+    icon: <MailOutlined />
     // children: []
   },
   {
-    key: "about",
-    label: "about",
-    icon: <MailOutlined />,
+    key: 'about',
+    label: 'about',
+    icon: <MailOutlined />
     // children: []
   },
   {
-    key: "NoMatch",
-    label: "NoMatch",
-    icon: <MailOutlined />,
+    key: 'NoMatch',
+    label: 'NoMatch',
+    icon: <MailOutlined />
     // children: []
-  },
-];
+  }
+]
 
 function Layout() {
-  const [current, setCurrent] = useState(window.location.pathname.slice(1));
-  const navigate = useNavigate();
+  const [current, setCurrent] = useState(window.location.pathname.slice(1))
+  const navigate = useNavigate()
 
-  const onClick: MenuProps["onClick"] = (e) => {
-    setCurrent(e.key);
-    navigate(e.key);
-  };
+  const onClick: MenuProps['onClick'] = (e) => {
+    setCurrent(e.key)
+    navigate(e.key)
+  }
   return (
     <div className="layout">
       <div className="menu">
         <Menu
-          theme={"dark"}
+          theme={'dark'}
           onClick={onClick}
-          style={{ width: 256, height: "100vh" }}
-          defaultOpenKeys={["home"]}
+          style={{ width: 256, height: '100vh' }}
+          defaultOpenKeys={['home']}
           selectedKeys={[current]}
           mode="inline"
           items={items}
@@ -96,7 +92,7 @@ function Layout() {
         <Outlet />
       </div>
     </div>
-  );
+  )
 }
 
-export default Layout;
+export default Layout
